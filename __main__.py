@@ -3,7 +3,6 @@ from rarfile import RarFile
 from tarfile import TarFile
 from py7zr import SevenZipFile
 import shutil
-from enum import StrEnum
 from typing import List
 
 import os, time
@@ -20,10 +19,6 @@ COMPRESSED_FORMATS = pmap ( {
     "tar": TarFile,
     "7z": SevenZipFile,
 } )
-
-class FileAction(StrEnum):
-    PRESERVE = "Preserve"
-    IGNORE = "Ignore"
 
 def isImage ( file: os.PathLike ):
     try: Image.open ( file )
