@@ -117,7 +117,7 @@ def processCompressedFile (
                     f"      File \"{filename}\" is not an image, "
                     f"and is therefore directly moved to \"{output_path}\"." 
                 )
-                shutil ( 
+                shutil.move ( 
                     src = dirpath/filename,
                     dst = output_path/filename,
                 )
